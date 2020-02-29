@@ -1,0 +1,6 @@
+package {{{ context.package }}}
+
+class ActionwordLibrary {{#curly}}{{#indent}}{{#each library_names as |library_name|}}
+fun get{{camelize library_name}}Library() = {{camelize library_name}}Library()
+{{/each}}{{/indent}}
+{{/curly}}

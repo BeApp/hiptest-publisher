@@ -1,0 +1,11 @@
+package {{{ context.package }}}
+
+import junit.framework.TestCase
+
+class {{{ clear_extension context.filename }}} : TestCase() {{#curly}}
+{{#indent}}
+val {{{ context.call_prefix }}} = Actionwords()
+{{#each rendered_children.scenarios as |scenario|}}{{{scenario}}}
+{{/each}}
+{{/indent}}
+{{/curly}}

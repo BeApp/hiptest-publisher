@@ -1,0 +1,19 @@
+package {{{ context.package }}}{{{ relative_package }}}
+
+import junit.framework.TestCase
+{{#if needs_to_import_actionwords? }}import {{{ context.package }}}.Actionwords
+{{/if}}
+class {{{ clear_extension context.filename }}} : TestCase() {{#curly}}
+{{#indent}}{{#if has_tags?}}{{#comment '//'}}Tags: {{join rendered_children.tags ' '}}
+{{/comment}}{{/if}}
+val {{{ context.call_prefix }}} = Actionwords()
+{{#unless is_empty?}}@Throws(Exception::class)
+protected fun setUp() {{#curly}}{{#indent}}
+super.setUp(){{/indent}}
+{{> body}}
+{{/curly}}
+
+{{/unless}}{{#each rendered_children.scenarios as |scenario|}}{{{scenario}}}
+{{/each}}
+{{/indent}}
+{{/curly}}

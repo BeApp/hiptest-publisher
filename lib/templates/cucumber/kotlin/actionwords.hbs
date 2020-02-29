@@ -1,0 +1,16 @@
+package {{{ context.package }}}
+
+import io.cucumber.datatable.DataTable
+import cucumber.api.java8.En
+
+@Suppress("unused")
+class StepDefinitions : En {{#curly}}{{#indent}}
+private val {{{ context.call_prefix }}} = Actionwords()
+
+init {{#curly}}{{#indent}}
+{{#each rendered_children.actionwords as |actionword|}}{{{actionword}}}
+{{/each}}
+{{/indent}}
+{{/curly}}
+{{/indent}}
+{{/curly}}

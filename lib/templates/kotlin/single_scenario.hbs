@@ -1,0 +1,12 @@
+package {{{ context.package }}}{{{ relative_package }}}
+
+import junit.framework.TestCase
+{{#if needs_to_import_actionwords? }}import {{{ context.package }}}.Actionwords
+{{/if}}
+class {{{ clear_extension context.filename }}} : TestCase() {{#curly}}
+{{#indent}}
+val {{{ context.call_prefix }}} = Actionwords()
+
+{{> scenario}}
+{{/indent}}
+{{/curly}}

@@ -1,0 +1,22 @@
+package {{{ context.package }}}
+
+import androidx.test.filters.LargeTest
+import androidx.test.rule.ActivityTestRule
+import androidx.test.ext.junit.runners.AndroidJUnit4
+
+import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
+
+@RunWith(AndroidJUnit4::class)
+@LargeTest
+class {{{ clear_extension context.filename }}} {{#curly}}
+{{#indent}}
+val {{{ context.call_prefix }}} = Actionwords()
+
+@Rule
+val mActivityRule = ActivityTestRule(MainActivity::class.java)
+
+{{> scenario}}
+{{/indent}}
+{{/curly}}
