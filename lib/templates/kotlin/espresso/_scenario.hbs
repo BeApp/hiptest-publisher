@@ -4,5 +4,5 @@
 {{#if has_tags?}}Tags: {{{ join rendered_children.tags ' '}}}{{/if}}
 {{/comment}}
 @Test
-fun test{{{ camelize rendered_children.name }}}{{#if rendered_children.uid}}Uid{{{ normalize rendered_children.uid}}}{{/if}}() {{#curly}}{{> body}}
+fun test{{{ camelize rendered_children.name }}}{{#if context.uids}}{{#if rendered_children.uid}}Uid{{{ normalize rendered_children.uid}}}{{/if}}{{/if}}() {{#curly}}{{> body}}
 {{/curly}}{{/if}}
